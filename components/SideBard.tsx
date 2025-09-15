@@ -14,22 +14,22 @@ import { usePathname } from "next/navigation";
 const routes = [
   {
     href: "",
-    label: "Home",
+    label: "Início",
     icon: HomeIcon,
   },
   {
     href: "workflows",
-    label: "WorkFlows",
+    label: "Workflows",
     icon: Layers2Icon,
   },
   {
     href: "credentials",
-    label: "Credentials",
+    label: "Credenciais",
     icon: ShieldCheckIcon,
   },
   {
     href: "billing",
-    label: "Billing",
+    label: "Faturamento",
     icon: CoinsIcon,
   },
 ];
@@ -46,7 +46,7 @@ function DesktopSidebar() {
         <Logo />
       </div>
       <div className="p-2">TODO CREDITS</div>
-      <div className="flex flex-col p-2">
+      <div className="flex flex-col p-2 gap-1">
         {routes.map((route) => (
           <Link
             key={route.href}
