@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { ClerkProvider } from "@clerk/nextjs";
+import {ptBR} from "@clerk/localizations"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,8 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider afterSignOutUrl={"/sign-in"}>
-      <html lang="en">
+    <ClerkProvider  afterSignOutUrl={"/sign-in"}
+   // localization={ptBR}
+    appearance={{
+      elements: {
+        formButtonPrimary: "bg-primary hover:bg-primary/90 text-sm !shadow-none"
+      }
+    }}>
+      <html lang="pt-br">
         <body className={inter.className}>
           <AppProviders>{children}</AppProviders>
         </body>
